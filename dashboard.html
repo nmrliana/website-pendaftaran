@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    body {
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dashboard-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      max-width: 500px;
+      width: 100%;
+    }
+    h2 {
+      font-weight: bold;
+    }
+    .btn-logout {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-box">
+    <h2 id="sambutan">🎉 Selamat Datang!</h2>
+    <p class="lead mt-3">Kamu telah berhasil mendaftar. Terima kasih sudah bergabung!</p>
+    <a href="index.html" class="btn btn-light btn-logout">Keluar</a>
+  </div>
+
+  <script>
+    const nama = localStorage.getItem("namaPengguna");
+    if (nama) {
+      document.getElementById("sambutan").innerText = `🎉 Selamat Datang, ${nama}!`;
+    }
+  </script>
+
+</body>
+</html>
